@@ -31,7 +31,8 @@ url(https://elearning-app-rm1o.vercel.app)
 ├── test_DK_KhoaHoc.py
 ├── test_HoTroKH.py
 ├── test_HuyDangKy.py
-└── test_TimKiem.py
+├── test_QLKH.py
+└── test_QLND.py
 ```
 
 ## Các TestCase bao gồm
@@ -80,4 +81,12 @@ url(https://elearning-app-rm1o.vercel.app)
 
 9. **Hỗ Trợ Khách Hàng**: `test_HoTroKH.py`
    - test_HT_001: Kiểm tra chức năng đăng ký tư vấn 
-   - test_HT_002: Kiểm tra chức năng nhận tin tức khuyến mãi   
+   - test_HT_002: Kiểm tra chức năng nhận tin tức khuyến mãi
+
+10. **Quản lý khoá học**: `test_QLKH.py`
+   - test_QLKH_001: Kiểm tra chức năng thêm khoá học
+   - test_QLKH_003: Kiểm tra chức năng xoá khoá học
+
+11. **Quản lý người dùng**: `test_QLND.py`
+   - test_QLKH_001: Kiểm tra chức năng thêm người dùng
+   - test_QLKH_003: Kiểm tra chức năng xoá người dùng
