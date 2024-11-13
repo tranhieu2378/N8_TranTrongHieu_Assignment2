@@ -26,17 +26,17 @@ def test_UTK_001(driver):
     ho_ten_element = driver.find_element(By.ID, "nest-messages_hoTen")
     email_element = driver.find_element(By.ID, "nest-messages_email")
     soDT_element = driver.find_element(By.ID, "nest-messages_soDT")
-    matKhau_element = driver.find_element(By.ID, "nest-messages_matKhau")
+    # matKhau_element = driver.find_element(By.ID, "nest-messages_matKhau")
 
     clear_field(ho_ten_element)
     clear_field(email_element)
     clear_field(soDT_element)
-    clear_field(matKhau_element)
+    # clear_field(matKhau_element)
 
     ho_ten_element.send_keys("Trần Trọng Hiếu")
     email_element.send_keys("tranhieu123@gmail.com")
     soDT_element.send_keys("098767123")
-    matKhau_element.send_keys("password123")
+    # matKhau_element.send_keys("password123")
 
     driver.find_element(By.XPATH, "//button[span[text() = 'Cập nhật thông tin']]").click()
     time.sleep(2)
@@ -46,6 +46,14 @@ def test_UTK_001(driver):
         EC.visibility_of_element_located((By.CLASS_NAME, "ant-message-notice-content"))
     )
     assert "Cập nhật thành công" in message_element.text
+
+    driver.get("https://elearning-app-rm1o.vercel.app/thongtintaikhoan")
+    time.sleep(2)
+
+    assert driver.find_element(By.ID, "nest-messages_hoTen").get_attribute('value') == "Trần Trọng Hiếu"
+    assert driver.find_element(By.ID, "nest-messages_email").get_attribute('value') == "tranhieu123@gmail.com"
+    assert driver.find_element(By.ID, "nest-messages_soDT").get_attribute('value') == "098767123"
+
 
 
 # Testcase 2: Cập nhật thông tin tài khoản với các trường không hợp lệ
